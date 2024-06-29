@@ -1,5 +1,6 @@
 Proceso cuestionarioGenero
 	
+// Hola buenas noches
 //PREGUNTAS DATOS BASICOS
 	Definir nombre Como Caracter
 	Definir apellido Como Caracter
