@@ -1,5 +1,4 @@
-Proceso Test_Evaluacion_Box
-	
+Algoritmo Test_Evaluacion_Box
 	
 	
 	// INICIO DE EVALUACIÓN DE TEST
@@ -8,7 +7,6 @@ Proceso Test_Evaluacion_Box
 	Definir apellido Como Caracter
 	
 	// BIENVENIDA AL TEST
-
 	Escribir "BIENVENIDO AL TEST DE RENDIMIENTO FISICO PARA LLEGAR A SER UN BOXEADOR PROFESIONAL"
 	Escribir "--------------------------------------------------------"
 	Escribir "POR FAVOR INGRESE SUS DATOS PERSONALES"
@@ -19,24 +17,23 @@ Proceso Test_Evaluacion_Box
 	Escribir "A. ¿Cuál es su nombre?"
 	Leer nombre
 	nombre = Mayusculas(nombre)
-	// PREGUNTA B
-	Escribir "B. ¿Cuál es su apellido?"
-	Leer apellido
-	
-	// PREGUNTA C - DNI 8 DIGITOS
-	
-	Definir DNI Como caracter
-	Definir long_dni  Como Entero
-	Escribir "C. Ingrese su DNI (debe tener 8 dígitos):"
-	Leer DNI
-	long_dni = Longitud(DNI)
-	
-	Mientras long_dni <> 8 Hacer
-		Escribir "DNI inválido. Debe tener exactamente 8 dígitos. Intente nuevamente:"
-		Leer DNI
-		long_dni = Longitud (DNI)
+		// PREGUNTA B
+		Escribir "B. ¿Cuál es su apellido?"
+		Leer apellido
 		
-	FinMientras
+			// PREGUNTA C - DNI 8 DIGITOS
+			Definir DNI Como caracter
+			Definir long_dni  Como Entero
+			Escribir "C. Ingrese su DNI (debe tener 8 dígitos):"
+			Leer DNI
+			long_dni = Longitud(DNI)
+					
+			Mientras long_dni <> 8 Hacer
+				Escribir "DNI inválido. Debe tener exactamente 8 dígitos. Intente nuevamente:"
+				Leer DNI
+				long_dni = Longitud (DNI)
+				
+			FinMientras
     
     Escribir "DNI válido: ", DNI
 	
@@ -55,7 +52,7 @@ Proceso Test_Evaluacion_Box
 	Escribir nombre, " Indique su genero: 1|MUJER Y 2|HOMBRE"
 	Leer genero 
 	
-	Mientras genero <> 1 y genero <> 2 Hacer
+	Mientras No EsNumero(genero) o (genero <> 1 y genero <> 2) Hacer
 		Escribir "Error, Por favor ingrese un valor válido."
 		Escribir nombre, " Indique su genero: 1|MUJER Y 2|HOMBRE"
 		Leer genero
@@ -66,11 +63,6 @@ Proceso Test_Evaluacion_Box
 	Sino
 		Escribir "Género seleccionado: HOMBRE"
 	FinSi
-		
-	
-	// VARIABLE PUNTO
-	Definir PUNTOS Como Entero
-	
-FinProceso
 
-
+	
+FinAlgoritmo
