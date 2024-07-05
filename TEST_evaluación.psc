@@ -1,7 +1,42 @@
+SubProceso n<-validarSiEsNumero(cd)
+	Definir num Como Caracter
+	Definir validarmenosnum, validarnum Como Logico
+	Repetir
+		Escribir "Ingresa correctamente tu respuesta"
+		Leer num
+		largonum <- Longitud(num)
+		validarnum <- Verdadero
+		validarmenosnum <- Verdadero
+		contarpuntonum <- 0
+		
+		Para i <- 1 Hasta largonum Con Paso 1 Hacer
+			numunico <- Subcadena(num,i,i)
+			si numunico <> '0' y numunico <> '1' y numunico <> '2' y numunico <> '3' y numunico <> '4' y numunico <> '5' y numunico <> '6' y numunico <> '7' y numunico <> '8' y numunico <> '9' y numunico <> '.' y numunico <> '-'
+				validarnum <- Falso
+			Fin Si
+			Si numunico= '.' Entonces
+				contarpuntonum <- contarpuntonum + 1
+			Fin Si
+			
+			si edadunico = '-' Entonces
+				si i = 1 Entonces
+					validarmenosnum <- Verdadero
+				SiNo
+					validarmenosnum <- Falso
+				Fin Si
+			Fin Si
+			
+			
+		FinPara
+	Hasta Que validarnum = Verdadero Y (contarpuntonum=0 O contarpuntonum=1) y validarmenosnum = Verdadero
+	
+	n <- ConvertirANumero(num)
+	
+FinSubProceso
+
+
 Proceso Test_Evaluacion_Box
-	
-	
-	
+		
 	// INICIO DE EVALUACIÓN DE TEST
 	// Definir variables
 	Definir nombre Como Caracter
@@ -49,7 +84,7 @@ Proceso Test_Evaluacion_Box
 	Escribir "--------------------------------------------------------"
 	Escribir "PREGUNTAS ELIMINARTORIAS"
 	Escribir "--------------------------------------------------------"
-	// PREGUNTA CANCELATORIA N° 1 - GENERO
+	// --------------------------------------------------------------------------------------------- PREGUNTA CANCELATORIA N° 1 - GENERO
 	Definir genero Como entero
 	
 	Escribir nombre, " Indique su genero: 1|MUJER Y 2|HOMBRE"
@@ -64,7 +99,7 @@ Proceso Test_Evaluacion_Box
 	si genero = 2
 		Escribir "Usted califica para el TEST"
 		
-		// PREGUNTA CANCELATORIA N° 2 - EDAD
+		// --------------------------------------------------------------------------------------------- PREGUNTA CANCELATORIA N° 2 - EDAD
 		Definir edad Como Caracter
 		Definir validarmenos, validaredad Como Logico
 		// Repetir para verificar que el dato ingresado sea un número
@@ -104,7 +139,7 @@ Proceso Test_Evaluacion_Box
 					
 					Escribir nombre ," CONTINUEMOS, Usted califica para el TEST"
 					
-					// PREGUNTA CANCELATORIA N° 3 - PESO
+					// --------------------------------------------------------------------------------------------- PREGUNTA CANCELATORIA N° 3 - PESO
 					
 					Definir peso Como Caracter
 					Definir validarmenospeso, validarpeso Como Logico
@@ -143,6 +178,42 @@ Proceso Test_Evaluacion_Box
 					si pesoI >= 48 Y pesoI <= 57 Entonces
 						Escribir nombre ," CONTINUEMOS, Usted califica para el TEST"
 						
+						// --------------------------------------------------------------------------------------------- PREGUNTA CANCELATORIA N° 4 - PRESIÓN
+						Definir presion Como caracter
+						Escribir nombre," ¿ Cuánto es tu presion arterial? (Responda según las opciones)"
+						Escribir "1| Mayor 120"
+						Escribir "2| Menor a 120"
+						
+						Leer presion
+						
+						n <- validarSiEsNumero(presion)
+						
+						si n = 2 Entonces
+							Escribir nombre, " CONTINUEMOS, Usted se encuentra en buen estado físico"
+							// --------------------------------------------------------------------------------------------- PREGUNTA CANCELATORIA N° 5 - ESFUERZO FÍSICO
+							Definir es_fisico Como Caracter
+							Escribir nombre," ¿Usted realizo lguna ves un test de esfuerzo físico? (Responda según las opciones)"
+							Escribir "1| Si"
+							Escribir "2| No"
+							
+							Leer es_fisico
+							
+							n <- validarSiEsNumero( es_fisico )
+							
+							Si n = 1 Entonces
+								Escribir nombre, " Es un deportista con experiencia, USTED ES APTO PARA RENDIR LOS TEST DE EVALUACION PARA BOXISTA PROIFESIONAL"
+								
+								
+								
+							SiNo
+								Escribir nombre, " ESTO ES UN TEST PARA BOXISTAS PROFESIONALES, Necesitas seguir practicando"
+							FinSi
+							
+							
+						SiNo
+							Escribir nombre, "Deberia hacer mas ejercicio"
+						FinSi
+						
 					SiNo
 						Escribir nombre ," Usted tiene un desorden alimenticio. NO PUEDE CONTINUAR CON EL TEST"
 						
@@ -158,7 +229,8 @@ Proceso Test_Evaluacion_Box
 		Escribir " NO PUEDES CONTINUAR, este test es solo para el genero masculino"
 		
 	Fin si	
-	
+
+
 	// VARIABLE PUNTO
 	Definir PUNTOS Como Entero
 	
