@@ -79,7 +79,7 @@ Proceso Test_Evaluacion_Box
 			Para i <- 1 Hasta largoedad Con Paso 1 Hacer
 				edadunico <- Subcadena(edad,i,i)
 				si edadunico <> '0' y edadunico <> '1' y edadunico <> '2' y edadunico <> '3' y edadunico <> '4' y edadunico <> '5' y edadunico <> '6' y edadunico <> '7' y edadunico <> '8' y edadunico <> '9' y edadunico <> '.' y edadunico <> '-'
-					validadedad <- Falso
+					validaredad <- Falso
 				FinSi
 				Si edadunico= '.' Entonces
 					contarpunto <- contarpunto + 1
@@ -102,10 +102,9 @@ Proceso Test_Evaluacion_Box
 		//CONDICIONAL SI ES O NO MAYOR DE EDAD
 			si edadI > 18 Entonces
 					
-					Escribir nombre ,"CONTINUEMOS, Usted califica para el TEST"
+					Escribir nombre ," CONTINUEMOS, Usted califica para el TEST"
 					
 					// PREGUNTA CANCELATORIA N° 3 - PESO
-					
 					
 					Definir peso Como Caracter
 					Definir validarmenospeso, validarpeso Como Logico
@@ -142,21 +141,21 @@ Proceso Test_Evaluacion_Box
 					pesoI <- ConvertirANumero(peso)
 					
 					si pesoI >= 48 Y pesoI <= 57 Entonces
-						Escribir nombre ,"CONTINUEMOS, Usted califica para el TEST"
+						Escribir nombre ," CONTINUEMOS, Usted califica para el TEST"
 						
 					SiNo
-						Escribir nombre ,"Usted tiene un desorden alimenticio. NO PUEDE CONTINUAR CON EL TEST"
+						Escribir nombre ," Usted tiene un desorden alimenticio. NO PUEDE CONTINUAR CON EL TEST"
 						
 					FinSi			
 					
 					
 			SiNo
-				Escribir nombre, "Eres menor de edad. NO PUEDES CONTINUAR CON EL TEST"
+				Escribir nombre, " Eres menor de edad. NO PUEDES CONTINUAR CON EL TEST"
 			Fin si
 			
 	SiNo
 		
-		Escribir "NO PUEDES CONTINUAR, este test es solo para el genero masculino"
+		Escribir " NO PUEDES CONTINUAR, este test es solo para el genero masculino"
 		
 	Fin si	
 	
