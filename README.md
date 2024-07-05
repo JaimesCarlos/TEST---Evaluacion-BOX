@@ -16,5 +16,5 @@ Diseñar un algoritmo para analizar el rendimiento de un boxeador en la categor�
 Al completar este proyecto, los alumnos no solo habrán profundizado en su comprensión de los algoritmos, sino que también habrán aplicado sus habilidades para abordar un problema del mundo real en el contexto del apasionante deporte del boxeo.
 
 
-![alt text](imagenes\box.png)
+![box](https://github.com/JaimesCarlos/TEST---Evaluacion-BOX/assets/101234632/beedecc2-8285-4f2e-9d25-772696158e95)
 
