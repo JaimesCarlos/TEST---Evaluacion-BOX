@@ -52,9 +52,8 @@ Proceso Test_Evaluacion_Box
 	Escribir nombre, " Indique su genero:" 
 	Escribir "1|MUJER Y 2|HOMBRE"
 	Leer genero 
-	
-
 	n <- validarSiEsNumero(genero)
+	
 	
 	si n = 2
 		Escribir "Usted califica para el TEST"
@@ -161,6 +160,7 @@ Proceso Test_Evaluacion_Box
 							n <- validarSiEsNumero( es_fisico )
 							
 							Si n = 1 Entonces
+								
 								Escribir nombre, " Es un deportista con experiencia, USTED ES APTO PARA RENDIR LOS TEST DE EVALUACION PARA BOXISTA PROIFESIONAL"
 								
 								Escribir "/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*"
@@ -172,12 +172,79 @@ Proceso Test_Evaluacion_Box
 								Escribir "FLEXIBILIDAD"
 								Escribir "El objetivo de este test es evaluar la flexibilidad, fuerza y resistencia de los postulantes para determinar su capacidad de desempeño en el boxeo profesional en la categoría peso gallo."
 								
-								//--------------------------------------------------------------------------------------------------------------------------------------------------------- PREGUNTA TEST PUNTOS N°1
-								Definir alcanzoDedos Como Caracter 
+								//--------------------------------------------------------------------------------------------------------------------------------------------------------- PREGUNTA TEST FLEXIBILIDAD PUNTOS N°1
+																
+								Escribir nombre,"¿Llegaste a alcanzar los dedos de los pies sin doblar las rodillas? (responda segun indique)" 
+								Escribir "1| Si"
+								Escribir "2| No"
 								
-								Escribir nombre,"¿Llegaste a alcanzar los dedos de los pies sin doblar las rodillas? (responda si o no)" 
+								Leer alcanzoDedos
 								
+								n <- validarSiEsNumero(alcanzoDedos)
 								
+								si n = 1 Entonces
+									Escribir nombre, "Acumulaste puntos!"
+										PUNTOS <- PUNTOS + 2
+										Escribir "Usted tiene ", PUNTOS, " puntos acumulados."
+								SiNo
+									Escribir nombre, "No se acumularon puntos"
+									Escribir "Usted tiene ", PUNTOS, " puntos acumulados."
+								FinSi
+								
+								//--------------------------------------------------------------------------------------------------------------------------------------------------------- PREGUNTA TEST FLEXIBILIDAD PUNTOS N°2
+								
+								Escribir nombre,"¿Llegaste a alcanzar la rodilla con la mano sin inclinarse? (responda segun indique)" 
+								Escribir "1| Si"
+								Escribir "2| No"
+								
+								Leer alcanzorodillas
+								
+								n <- validarSiEsNumero(alcanzorodillas)
+								si n = 1 Entonces
+									Escribir nombre, "Acumulaste puntos!"
+									PUNTOS <- PUNTOS + 2
+									Escribir "Usted tiene ", PUNTOS, " puntos acumulados."
+								SiNo
+									Escribir nombre, "No se acumularon puntos"
+									Escribir "Usted tiene ", PUNTOS, " puntos acumulados."
+								FinSi
+								
+								//--------------------------------------------------------------------------------------------------------------------------------------------------------- PREGUNTA TEST FLEXIBILIDAD PUNTOS N°3
+								
+								Escribir nombre,"¿Pudo alcanzar a tocarse el tobillo sin inclinarse? (responda segun indique)"
+								Escribir "1| Si"
+								Escribir "2| No"
+								
+								Leer alcanzotobillo
+								
+								n <- validarSiEsNumero(alcanzotobillo)
+								si n = 1 Entonces
+									Escribir nombre, "Acumulaste puntos!"
+									PUNTOS <- PUNTOS + 2
+									Escribir "Usted tiene ", PUNTOS, " puntos acumulados."
+								SiNo
+									Escribir nombre, "No se acumularon puntos"
+									Escribir "Usted tiene ", PUNTOS, " puntos acumulados."
+								FinSi
+								
+								//--------------------------------------------------------------------------------------------------------------------------------------------------------- PREGUNTA TEST FLEXIBILIDAD PUNTOS N°4
+								Escribir nombre,"¿Pudo alcanzar estando sentado en el suelo los dedos de los pies? (responda segun indique)"
+								Escribir "1| Si"
+								Escribir "2| No"
+								
+								Leer alczopies
+								
+								n <- validarSiEsNumero(alczopies)
+								si n = 1 Entonces
+									Escribir nombre, "Acumulaste puntos!"
+									PUNTOS <- PUNTOS + 2
+									Escribir "Usted tiene ", PUNTOS, " puntos acumulados."
+								SiNo
+									Escribir nombre, "No se acumularon puntos"
+									Escribir "Usted tiene ", PUNTOS, " puntos acumulados."
+								FinSi
+								
+								//--------------------------------------------------------------------------------------------------------------------------------------------------------- PREGUNTA TEST RESISTENCIA PUNTOS N°5
 								
 								
 								
@@ -210,11 +277,9 @@ Proceso Test_Evaluacion_Box
 	
 FinProceso
 
-SubProceso n <- validarSiEsNumero(num)
+Funcion n <- validarSiEsNumero(num)
 	Definir validarmenosnum, validarnum Como Logico
 	Repetir
-		Escribir "Ingresa correctamente tu respuesta"
-		Leer num
 		largonum <- Longitud(num)
 		validarnum <- Verdadero
 		validarmenosnum <- Verdadero
@@ -242,10 +307,12 @@ SubProceso n <- validarSiEsNumero(num)
 		
 		Si validarnum = Falso o (contarpuntonum>1) o validarmenosnum = Falso Entonces
 			Escribir "No esta ingresando una opcion o numero correcto"
+			Leer num
 		Fin Si
 	Hasta Que validarnum = Verdadero Y (contarpuntonum=0 O contarpuntonum=1) y validarmenosnum = Verdadero
 	
 	n <- ConvertirANumero(num)
 	
-FinSubProceso
+FinFuncion
+
 
